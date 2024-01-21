@@ -12,7 +12,7 @@ export class BeCallsService {
   listProducts(limit: number = 0): Observable<Product[]> {
     if(limit === 0 || limit === null) {
       return this.httpclient.get<Product[]>(
-        'https://factoryitems.azurewebsites.net/api/products/'
+        'https://*****/api/products/'
       );
     }
     return this.httpclient.get<Product[]>(
@@ -23,7 +23,7 @@ export class BeCallsService {
 
   createProduct(product: Partial<Product>): Observable<Product> {
     return this.httpclient.post<Product>(
-      'https://factoryitems.azurewebsites.net/api/products/',
+      'https://*****/api/products/',
       product
     );
   }
@@ -31,18 +31,18 @@ export class BeCallsService {
   listPurchases(limit: number = 0): Observable<CartItem[]> {
     if(limit === 0 || limit === null) {
       return this.httpclient.get<CartItem[]>(
-        'https://factoryitems.azurewebsites.net/api/purchase/'
+        'https://*****/api/purchase/'
       );
     }
     return this.httpclient.get<CartItem[]>(
-      'https://factoryitems.azurewebsites.net/api/purchase/',
+      'https://*****/api/purchase/',
       { params: { limit: limit.toString() } }
     );
   }
 
   createPurchase(purchase: Partial<CartItem>): Observable<CartItem> {
     return this.httpclient.post<CartItem>(
-      'https://factoryitems.azurewebsites.net/api/purchase/',
+      'https://******/api/purchase/',
       purchase
     );
   }
